@@ -13,13 +13,13 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 #                                INSTALLATION
 ###############################################################################
 
-ENV FILEBEAT_VERSION=5.0.0
+ENV FILEBEAT_VERSION=5.3.0
 
 RUN set -x \
  && apk add --update bash \
                      curl \
                      tar \
-					 openssl \                    
+					 openssl \
  && curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz \
  && tar xzvf filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz -C / --strip-components=1 \
  && rm -rf filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz \
@@ -31,10 +31,10 @@ RUN set -x \
             tar \
 			openssl \
  && rm -rf /var/cache/apk/*
- 
+
 ###############################################################################
 #                                   START
-############################################################################### 
+###############################################################################
 
 COPY docker-entrypoint.sh /
 RUN chmod +x docker-entrypoint.sh filebeat \
