@@ -13,7 +13,7 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 #                                INSTALLATION
 ###############################################################################
 
-ENV FILEBEAT_VERSION=5.3.0
+ENV FILEBEAT_VERSION=5.4.0
 
 RUN set -x \
  && apk add --update bash \
